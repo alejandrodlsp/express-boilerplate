@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "lib": ["es2021"],
+    "target": "es2021",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@services/*": ["src/services/*"],
+      "@controllers/*": ["src/controllers/*"],
+      "@entity/*": ["src/entity/*"]
+    }
+  }
+}
