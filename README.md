@@ -1,7 +1,11 @@
-# Awesome Project Build with TypeORM
+# Express boilerplate code
 
-Steps to run this project:
+## NPM Commands:
+  - npm run dev
+  - npm run typeorm
+  - npm run lint - npm run lint:fix
+  - npm run prettier - npm run prettier:fix
 
-1. Run `npm i` command
-2. Setup database settings inside `data-source.ts` file
-3. Run `npm start` command
+## How to start development server
+  - Run docker compose to start db '''docker compose up -d'''
+  - Run express server with '''npm run dev'''
