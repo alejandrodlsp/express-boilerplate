@@ -23,8 +23,8 @@ export class UserController {
 
   // POST /users
   async create(req: Request, res: Response) {
-    const { firstName, lastName, age } = req.body;
-    const user = await CreateUserService.initialize({ firstName, lastName, age });
+    const { firstName, lastName, email } = req.body;
+    const user = await CreateUserService.initialize({ firstName, lastName, email });
 
     res.status(201).json(user);
   }

@@ -1,5 +1,6 @@
-import * as express from "express";
-import * as bodyParser from "body-parser";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import express from "express";
+import bodyParser from "body-parser";
 import { Request, Response } from "express";
 import { AppDataSource } from "./data-source";
 import { Routes } from "./routes";
@@ -19,12 +20,11 @@ AppDataSource.initialize()
   })
   .catch((error) => console.log(error));
 
-// Registra rutas. Los servicios envían la respuesta directamente con res.json/send,
-// por lo que el handler solo invoca la acción del controller sin manipular el resultado.
 function registerRoutes(app: express.Express) {
   Routes.forEach((route) => {
     (app as any)[route.method](
       route.route,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
       async (req: Request, res: Response, next: Function) => {
         try {
           await new (route.controller as any)()[route.action](req, res, next);
